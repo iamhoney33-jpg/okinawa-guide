@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖繩旅行手冊 · 2026.07.14–18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E3B43;          /* 墨海 */
+  --sea:#1F8A9C;          /* 琉璃海 */
+  --sea-soft:#DCEEF0;
+  --paper:#F2F7F6;        /* 海霧紙 */
+  --card:#FFFFFF;
+  --coral:#F4643C;        /* 珊瑚 */
+  --bingata:#E8A93B;      /* 紅型黃 */
+  --leaf:#2E9E6B;
+  --shell:#6B5CA5;
+  --line:#D5E3E2;
+  --muted:#5E7A7C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 80px}
+
+/* ---------- 封面 ---------- */
+.cover{
+  background:linear-gradient(168deg,#0E3B43 0%,#155A66 55%,#1F8A9C 100%);
+  color:#F2F7F6;
+  border-radius:0 0 28px 28px;
+  padding:44px 24px 0;
+  margin:0 -16px 20px;
+  overflow:hidden;
+  position:relative;
+}
+.cover .eyebrow{
+  font-size:12px;letter-spacing:.35em;color:#9FD3DB;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.cover h1{
+  font-family:'Noto Serif TC',serif;font-weight:900;
+  font-size:52px;line-height:1.15;letter-spacing:.06em;
+}
+.cover .sub{
+  font-family:'Noto Serif TC',serif;
+  font-size:17px;color:#C8E6EA;margin-top:6px;letter-spacing:.12em;
+}
+.cover .meta{
+  display:flex;gap:18px;margin-top:22px;font-size:13px;color:#C8E6EA;
+}
+.cover .meta b{display:block;font-size:19px;color:#fff;font-weight:700;letter-spacing:.03em}
+.wave{display:block;width:100%;margin-top:26px}
+
+/* ---------- 導覽 ---------- */
+.daynav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(242,247,246,.92);backdrop-filter:blur(8px);
+  margin:0 -16px;padding:10px 16px;
+  display:flex;gap:8px;overflow-x:auto;
+  border-bottom:1px solid var(--line);
+  -webkit-overflow-scrolling:touch;
+}
+.daynav::-webkit-scrollbar{display:none}
+.daynav a{
+  flex:0 0 auto;text-decoration:none;
+  font-size:13px;font-weight:700;color:var(--ink);
+  background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:6px 14px;white-space:nowrap;
+}
+.daynav a.hot{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- 資訊卡 ---------- */
+.keycards{display:grid;gap:10px;margin:20px 0 6px}
+.keycard{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+}
+.keycard .k{font-size:12px;color:var(--muted);letter-spacing:.05em}
+.keycard .v{font-weight:700;font-size:15px;text-align:right}
+.keycard .v small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+
+/* ---------- 日票頭 ---------- */
+.day{margin-top:34px}
+.ticket{
+  background:var(--ink);color:#F2F7F6;border-radius:16px;
+  padding:18px 20px 16px;position:relative;overflow:hidden;
+}
+.ticket::before,.ticket::after{
+  content:"";position:absolute;top:50%;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);transform:translateY(-50%);
+}
+.ticket::before{left:-10px}
+.ticket::after{right:-10px}
+.ticket .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ticket .dnum{
+  font-family:'Noto Serif TC',serif;font-weight:900;font-size:34px;letter-spacing:.02em;
+}
+.ticket .dnum span{font-size:15px;color:#8FC9D2;font-weight:600;margin-left:8px}
+.ticket .dow{
+  font-size:12px;letter-spacing:.3em;color:var(--bingata);font-weight:700;
+}
+.ticket .theme{
+  margin-top:6px;font-size:14px;color:#C8E6EA;
+  border-top:1px dashed rgba(255,255,255,.28);padding-top:8px;
+}
+
+/* ---------- 時間軸 ---------- */
+.tl{margin-top:14px;position:relative;padding-left:64px}
+.tl::before{
+  content:"";position:absolute;left:52px;top:8px;bottom:8px;
+  width:2px;background:var(--line);border-radius:2px;
+}
+.stop{position:relative;margin-bottom:12px}
+.stop .time{
+  position:absolute;left:-64px;top:14px;width:44px;
+  font-size:12px;font-weight:700;color:var(--sea);
+  font-variant-numeric:tabular-nums;text-align:right;
+}
+.stop .dot{
+  position:absolute;left:-17px;top:18px;width:10px;height:10px;border-radius:50%;
+  background:var(--dotc,var(--sea));border:2px solid var(--paper);
+  box-shadow:0 0 0 2px var(--dotc,var(--sea));
+}
+.stopcard{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;
+}
+.stopcard .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{
+  font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  padding:2px 8px;border-radius:999px;color:#fff;background:var(--dotc,var(--sea));
+}
+.stopcard h3{font-size:15.5px;font-weight:700;line-height:1.4}
+.stopcard .place{font-size:12.5px;color:var(--muted);margin-top:2px}
+.maplink{display:inline-block;font-size:11px;font-weight:700;color:var(--sea);text-decoration:none;border:1px solid #BFDDE1;border-radius:999px;padding:1px 8px;margin-left:6px;white-space:nowrap;vertical-align:1px}
+.maplink:active{background:var(--sea-soft)}
+.stopcard .note{
+  margin-top:6px;font-size:12.5px;color:var(--ink);
+  background:var(--sea-soft);border-radius:8px;padding:6px 10px;
+}
+.stopcard .note a{color:var(--sea);word-break:break-all}
+.badge{
+  display:inline-block;font-size:10.5px;font-weight:700;border-radius:6px;
+  padding:1px 7px;margin-left:6px;vertical-align:1px;
+}
+.paid{background:#E2F3E9;color:#1E7A4F}
+.unpaid{background:#FDEBE4;color:#C24A22}
+
+/* 類別色 */
+.c-traffic{--dotc:#1F8A9C}
+.c-food{--dotc:#F4643C}
+.c-sight{--dotc:#2E9E6B}
+.c-shop{--dotc:#E8A93B}
+.c-stay{--dotc:#6B5CA5}
+.c-free{--dotc:#9AA9AB}
+
+/* ---------- 清單 ---------- */
+.section-h{
+  font-family:'Noto Serif TC',serif;font-weight:900;font-size:24px;
+  margin:40px 0 4px;letter-spacing:.05em;
+}
+.section-sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+.checkgroup{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:6px 16px;margin-bottom:12px;
+}
+.checkgroup h4{
+  font-size:13px;color:var(--sea);letter-spacing:.1em;font-weight:700;
+  padding:10px 0 4px;
+}
+.check{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 0;border-top:1px solid #EDF3F2;cursor:pointer;
+  font-size:14.5px;
+}
+.checkgroup .check:first-of-type{border-top:none}
+.check input{
+  appearance:none;width:20px;height:20px;flex:0 0 20px;margin-top:2px;
+  border:2px solid var(--sea);border-radius:6px;cursor:pointer;position:relative;
+}
+.check input:checked{background:var(--sea);border-color:var(--sea)}
+.check input:checked::after{
+  content:"✓";color:#fff;font-size:13px;font-weight:900;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
+}
+.check input:checked ~ .txt{color:var(--muted);text-decoration:line-through}
+.check .txt small{display:block;font-size:11.5px;color:var(--muted);text-decoration:none}
+[data-group="memo"] .check input:checked ~ .txt{text-decoration:none}
+
+.check .txt small a{color:var(--sea)}
+
+.footer{
+  text-align:center;font-size:12px;color:var(--muted);
+  margin-top:48px;letter-spacing:.15em;
+}
+.footer .sun{font-size:20px;display:block;margin-bottom:6px}
+@media (prefers-reduced-motion:no-preference){
+  .stopcard{transition:transform .15s ease}
+  .stopcard:active{transform:scale(.985)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 封面 -->
+  <header class="cover">
+    <div class="eyebrow">Family Trip · Tiger Air IT230</div>
+    <h1>沖繩</h1>
+    <div class="sub">OKINAWA ・ 夏の家族旅</div>
+    <div class="meta">
+      <div><b>7/14 – 7/18</b>2026 · 五天四夜</div>
+      <div><b>YFDYJE</b>虎航訂位代號</div>
+    </div>
+    <svg class="wave" viewBox="0 0 640 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,30 C80,55 160,5 240,28 C320,50 400,10 480,30 C560,48 600,20 640,32 L640,60 L0,60 Z" fill="#F2F7F6"/>
+    </svg>
+  </header>
+
+  <!-- 日導覽 -->
+  <nav class="daynav">
+    <a href="#d1">Day 1 · 抵達</a>
+    <a href="#d2">Day 2 · 美國村</a>
+    <a href="#d3">Day 3 · 換宿</a>
+    <a href="#d4">Day 4 · 水族館</a>
+    <a href="#d5" class="hot">Day 5 · 回家</a>
+    <a href="#memo">✈ 出發前</a>
+    <a href="#pack">🧳 行李</a>
+  </nav>
+
+  <!-- 重要資訊 -->
+  <div class="keycards">
+    <div class="keycard"><span class="k">去程</span><span class="v">IT230 · 06:50 桃園 → 09:20 那霸<small>7/14（二）</small></span></div>
+    <div class="keycard"><span class="k">回程</span><span class="v">IT233 · 21:40 那霸 → 22:10 桃園<small>7/18（六）</small></span></div>
+    <div class="keycard"><span class="k">租車</span><span class="v">TOYOTA Omoromachi<small>預約 99968450600 / 99968452500</small></span></div>
+    <div class="keycard"><span class="k">住宿 ①</span><span class="v">マカナレアビーチ · 7/14–16<small>編號 5907534847 · PIN 2710</small></span></div>
+    <div class="keycard"><span class="k">住宿 ②</span><span class="v">Ocean Tree · 7/16–18<small>編號 6689892132 · PIN 7473</small></span></div>
+  </div>
+
+  <!-- Day 1 -->
+  <section class="day" id="d1">
+    <div class="ticket">
+      <div class="row"><div class="dnum">Day 1<span>7.14</span></div><div class="dow">TUE 週二</div></div>
+      <div class="theme">起飛・租車・入住海邊民宿</div>
+    </div>
+    <div class="tl">
+      <div class="stop c-traffic"><span class="time">06:50</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>虎航 IT230 出發 <span class="badge paid">已付</span></h3></div>
+        <div class="place">臺灣桃園國際機場 (TPE) <a class="maplink" href="https://www.google.com/maps/place/%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4+(TPE)/data=!4m2!3m1!19sChIJ1RXSYsCfQjQRCbG1qZC2o3A" target="_blank">📍 地圖</a></div>
+        <div class="note">訂位代號 YFDYJE · 機票 NT$110,470</div></div></div>
+      <div class="stop c-traffic"><span class="time">09:20</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>抵達沖繩</h3></div>
+        <div class="place">那霸機場 <a class="maplink" href="https://www.google.com/maps/place/%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4/data=!4m2!3m1!19sChIJjSyLjsRp5TQRkP5WN6rOTFA" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-traffic"><span class="time">10:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>單軌電車 → Omoromachi <span class="badge unpaid">現場付</span></h3></div>
+        <div class="place">Naha Airport Station <a class="maplink" href="https://maps.app.goo.gl/z3UrADQnkCbTDarM8" target="_blank">📍 地圖</a></div>
+        <div class="note">大人 ¥320 / 小孩 ¥160 · 合計約 ¥2,560</div></div></div>
+      <div class="stop c-traffic"><span class="time">11:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>TOYOTA 取車（兩台）<span class="badge paid">已付</span></h3></div>
+        <div class="place">TOYOTA Rent a Car Omoromachi T Galleria 店 <a class="maplink" href="https://maps.app.goo.gl/BpenPx9VJ9EP3PWC7" target="_blank">📍 地圖</a></div>
+        <div class="note">預約 99968450600（¥119,394）· 99968452500（¥89,089）</div></div></div>
+      <div class="stop c-food"><span class="time">12:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>海鮮食堂 太陽・午餐</h3></div>
+        <div class="place">Kaisen Shokudō Tiida <a class="maplink" href="https://maps.app.goo.gl/j5NTULDdLNYWAGA39" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-shop"><span class="time">14:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>超市採買晚餐</h3></div>
+        <div class="place">Aeon Big Express <a class="maplink" href="https://maps.app.goo.gl/xThxWbQ1igUnDaDP6" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-stay"><span class="time">16:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">住宿</span><h3>入住民宿（15:00 後）<span class="badge paid">已付</span></h3></div>
+        <div class="place">ペンション マカナレアビーチ沖縄 <a class="maplink" href="https://maps.app.goo.gl/sarbEGpBPfUXDy769" target="_blank">📍 地圖</a></div>
+        <div class="note">編號 5907534847 · PIN 2710 · ¥108,979</div></div></div>
+      <div class="stop c-food"><span class="time">17:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>在家晚餐</h3></div>
+        <div class="place">民宿</div></div></div>
+      <div class="stop c-shop"><span class="time">19:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>唐吉訶德・買團服</h3></div>
+        <div class="place">MEGA Don Quijote 宜野灣店 <a class="maplink" href="https://maps.app.goo.gl/mKPHFjn7ACsr8XpQ8" target="_blank">📍 地圖</a></div>
+        <div class="note">營業到凌晨 5 點，慢慢逛</div></div></div>
+    </div>
+  </section>
+
+  <!-- Day 2 -->
+  <section class="day" id="d2">
+    <div class="ticket">
+      <div class="row"><div class="dnum">Day 2<span>7.15</span></div><div class="dow">WED 週三</div></div>
+      <div class="theme">AEON MALL・美國村・落日海灘</div>
+    </div>
+    <div class="tl">
+      <div class="stop c-shop"><span class="time">10:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>AEON MALL Okinawa Rycom</h3></div>
+        <div class="place">10:00 開始營業 <a class="maplink" href="https://maps.app.goo.gl/qhwA95vwvFEXrk6P9" target="_blank">📍 地圖</a></div>
+        <div class="note"><a href="https://okinawarycom.aeonmall.jp/floormap" target="_blank">樓層地圖</a></div></div></div>
+      <div class="stop c-food"><span class="time">12:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>AEON 3F 美食街・午餐</h3></div>
+        <div class="place">AEON MALL Okinawa Rycom <a class="maplink" href="https://maps.app.goo.gl/qhwA95vwvFEXrk6P9" target="_blank">📍 地圖</a></div>
+        <div class="note"><a href="https://tw.aeonmall.global/catalog/floormap/okinawarycom/tw/index.html" target="_blank">中文樓層指南</a></div></div></div>
+      <div class="stop c-sight"><span class="time">14:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">景點</span><h3>美國村</h3></div>
+        <div class="place">American Village <a class="maplink" href="https://maps.app.goo.gl/Wey4iEFQLhJnLNLv6" target="_blank">📍 地圖</a></div>
+        <div class="note">攻略遊記:<a href="https://bobbyfun.tw/2024-01-08-2709/" target="_blank">波比看世界・美國村最強地圖攻略</a></div></div></div>
+      <div class="stop c-sight"><span class="time">16:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">景點</span><h3>北谷公園 落日海灘</h3></div>
+        <div class="place">Chatan Park Sunset Beach <a class="maplink" href="https://maps.app.goo.gl/SnTU9i1sM95YdCTk6" target="_blank">📍 地圖</a></div>
+        <div class="note">看完夕陽再去超市採買晚餐</div></div></div>
+      <div class="stop c-shop"><span class="time">18:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>業務超市買晚餐</h3></div>
+        <div class="place">業務スーパー(業務超市) <a class="maplink" href="https://maps.app.goo.gl/5kZriB4RwdujFYuK9" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-food"><span class="time">19:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>在家晚餐</h3></div>
+        <div class="place">民宿</div></div></div>
+    </div>
+  </section>
+
+  <!-- Day 3 -->
+  <section class="day" id="d3">
+    <div class="ticket">
+      <div class="row"><div class="dnum">Day 3<span>7.16</span></div><div class="dow">THU 週四</div></div>
+      <div class="theme">退房換宿・PARCO・漫畫倉庫巡禮</div>
+    </div>
+    <div class="tl">
+      <div class="stop c-stay"><span class="time">10:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">住宿</span><h3>退房（10:00 前）</h3></div>
+        <div class="place">ペンション マカナレアビーチ沖縄</div></div></div>
+      <div class="stop c-shop"><span class="time">10:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>PARCO CITY</h3></div>
+        <div class="place">10:00 開始營業 <a class="maplink" href="https://maps.app.goo.gl/1N1K3U1o7AdUKBra8" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-food"><span class="time">12:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>PARCO 2F・午餐</h3></div>
+        <div class="place">PARCO CITY <a class="maplink" href="https://maps.app.goo.gl/1N1K3U1o7AdUKBra8" target="_blank">📍 地圖</a></div>
+        <div class="note"><a href="https://www.parcocity.jp/floorguide/map/" target="_blank">樓層地圖</a></div></div></div>
+      <div class="stop c-sight"><span class="time">14:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">景點</span><h3>港川外人住宅</h3></div>
+        <div class="place">Minatogawa Stateside Town <a class="maplink" href="https://maps.app.goo.gl/dtQiLVUL18osw89z9" target="_blank">📍 地圖</a></div>
+        <div class="note">和漫畫倉庫浦添店很近，可以分兩路逛</div></div></div>
+      <div class="stop c-shop"><span class="time">14:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>漫畫倉庫 浦添店</h3></div>
+        <div class="place">Manga Souko Urasoe <a class="maplink" href="https://maps.app.goo.gl/2ab7YWV4pVkvn1Nc6" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-stay"><span class="time">16:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">住宿</span><h3>入住 Ocean Tree（15:00 後）<span class="badge paid">已付</span></h3></div>
+        <div class="place">Ocean Tree <a class="maplink" href="https://maps.app.goo.gl/5MZBzNBoQVNyaRqa9" target="_blank">📍 地圖</a></div>
+        <div class="note">編號 6689892132 · PIN 7473 · ¥113,465</div></div></div>
+      <div class="stop c-food"><span class="time">17:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>糸滿魚市場・買晚餐</h3></div>
+        <div class="place">Itoman Fish Center <a class="maplink" href="https://maps.app.goo.gl/mW7CZKZnw9fQQE696" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-food"><span class="time">19:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>在家晚餐</h3></div>
+        <div class="place">Ocean Tree <a class="maplink" href="https://maps.app.goo.gl/5MZBzNBoQVNyaRqa9" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-shop"><span class="time">20:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>漫畫倉庫那霸店 / 唐吉訶德豐見城店</h3></div>
+        <div class="place">Manga Souko Naha <a class="maplink" href="https://maps.app.goo.gl/6GfNb659JUgGwVqg9" target="_blank">📍 那霸店</a> · MEGA Don Quijote Tomigusuku <a class="maplink" href="https://maps.app.goo.gl/Qkh49X5fvrVKyZnv6" target="_blank">📍 豐見城店</a></div>
+        <div class="note">晚上加碼行程，看體力二選一或都去</div></div></div>
+    </div>
+  </section>
+
+  <!-- Day 4 -->
+  <section class="day" id="d4">
+    <div class="ticket">
+      <div class="row"><div class="dnum">Day 4<span>7.17</span></div><div class="dow">FRI 週五</div></div>
+      <div class="theme">水族館・沖繩麵・國際通夜巡</div>
+    </div>
+    <div class="tl">
+      <div class="stop c-sight"><span class="time">09:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">景點</span><h3>DMM Kariyushi 水族館</h3></div>
+        <div class="place">DMM Kariyushi Aquarium Okinawa <a class="maplink" href="https://maps.app.goo.gl/gbRkbZ2bTsuDGUxL8" target="_blank">📍 地圖</a></div>
+        <div class="note">別忘了<a href="https://kariyushi-aquarium.com/feeding/" target="_blank">餵食體驗</a>（門票見出發前清單）</div></div></div>
+      <div class="stop c-food"><span class="time">12:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>玉家 沖繩麵・午餐</h3></div>
+        <div class="place">Tamaya Toyosaki <a class="maplink" href="https://maps.app.goo.gl/CqANNUgkVVFmFQDY6" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-shop"><span class="time">14:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>Sports Depo Ameku</h3></div>
+        <div class="place">Sports Depo Ameku <a class="maplink" href="https://maps.app.goo.gl/hzjfQEdtFFhVa1pC6" target="_blank">📍 地圖</a></div>
+        <div class="note">ON 球鞋、運動用品</div></div></div>
+      <div class="stop c-shop"><span class="time">16:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">逛街</span><h3>駿河屋・國際通・小巷小店</h3></div>
+        <div class="place">みどり駐車場(那覇・牧志) <a class="maplink" href="https://maps.app.goo.gl/jTxdccRKpiAp5xEA8" target="_blank">📍 地圖</a></div>
+        <div class="note">導航定位在駿河屋對面停車場 · 約 200 台 · 有屋頂 · 24h</div></div></div>
+      <div class="stop c-food"><span class="time">18:30</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">餐飲</span><h3>こばこ・晚餐</h3></div>
+        <div class="place">島野菜とアグー豚・山城牛の店 こばこ <a class="maplink" href="https://maps.app.goo.gl/LnroHLEWYW7kBA6H9" target="_blank">📍 地圖</a></div>
+        <div class="note">沖繩島蔬菜、阿古豬與山城牛料理</div></div></div>
+    </div>
+  </section>
+
+  <!-- Day 5 -->
+  <section class="day" id="d5">
+    <div class="ticket">
+      <div class="row"><div class="dnum">Day 5<span>7.18</span></div><div class="dow">SAT 週六</div></div>
+      <div class="theme">海葡萄農園・最後採買・回家</div>
+    </div>
+    <div class="tl">
+      <div class="stop c-stay"><span class="time">10:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">住宿</span><h3>退房（10:00 前）</h3></div>
+        <div class="place">Ocean Tree <a class="maplink" href="https://maps.app.goo.gl/5MZBzNBoQVNyaRqa9" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-sight"><span class="time">12:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">景點</span><h3>海ぶどう農園 海ん道</h3></div>
+        <div class="place">海葡萄農園 <a class="maplink" href="https://maps.app.goo.gl/bmQo6EZaApAt1ybQA" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-free"><span class="time">14:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">彈性</span><h3>保留彈性・最後購物許願</h3></div>
+        <div class="place">想補買什麼都在這一段</div></div></div>
+      <div class="stop c-traffic"><span class="time">18:00</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>還車</h3></div>
+        <div class="place">TOYOTA Rent a Car 那霸機場店 <a class="maplink" href="https://maps.app.goo.gl/nr5H5fkXe9F6pi5N6" target="_blank">📍 地圖</a></div></div></div>
+      <div class="stop c-traffic"><span class="time">21:40</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>虎航 IT233 起飛</h3></div>
+        <div class="place">那霸機場 <a class="maplink" href="https://www.google.com/maps/place/%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4/data=!4m2!3m1!19sChIJjSyLjsRp5TQRkP5WN6rOTFA" target="_blank">📍 地圖</a></div>
+        <div class="note">訂位代號 YFDYJE</div></div></div>
+      <div class="stop c-traffic"><span class="time">22:10</span><span class="dot"></span>
+        <div class="stopcard"><div class="top"><span class="chip">交通</span><h3>抵達桃園機場</h3></div>
+        <div class="place">臺灣桃園國際機場 (TPE) <a class="maplink" href="https://www.google.com/maps/place/%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4+(TPE)/data=!4m2!3m1!19sChIJ1RXSYsCfQjQRCbG1qZC2o3A" target="_blank">📍 地圖</a></div></div></div>
+    </div>
+  </section>
+
+  <!-- 出發前確認 -->
+  <h2 class="section-h" id="memo">出發前確認</h2>
+  <p class="section-sub">點一下就能打勾，會記住進度</p>
+  <div class="checkgroup" data-group="memo">
+    <label class="check"><input type="checkbox" data-key="memo-aquarium"><span class="txt">DMM 水族館門票<small><a href="https://book.kariyushi-aquarium.com/top/products/dd39bc1a-167a-5434-8222-f74d0b2fa84e/checkout?productInstanceId=68e3127a-9d26-5635-9fc4-5a24ea148cc0&guestCount=%7B%22%E5%A4%A7%E4%BA%BA%22%3A%226%22%2C%22%E4%B8%AD%E4%BA%BA%22%3A%221%22%2C%22%E5%B0%8F%E4%BA%BA%22%3A%222%22%7D&lng=ja-JP&lng=ja-JP" target="_blank">線上購票</a>（大人6・中人1・小人2）</small></span></label>
+    <label class="check"><input type="checkbox" checked data-key="memo-esim"><span class="txt">手機 eSIM<small>已買，機場領取</small></span></label>
+    <label class="check"><input type="checkbox" data-key="memo-checkin"><span class="txt">虎航自助報到<small><a href="https://sci.tigerairtw.com/zh-TW/login" target="_blank">報到連結</a> · 代號 YFDYJE</small></span></label>
+    <label class="check"><input type="checkbox" checked data-key="memo-vjw"><span class="txt">Visit Japan Web 入境 QR code<small><a href="https://www.vjw.digital.go.jp/main/#/vjwpco001" target="_blank">vjw.digital.go.jp</a> · <a href="https://drive.google.com/drive/u/0/folders/1mMPQqqiN6FdgXEkWjBSD8izjjMNBhsTh" target="_blank">QR code 雲端資料夾</a></small></span></label>
+    <label class="check"><input type="checkbox" checked data-key="memo-coupon"><span class="txt">各種優惠券<small><a href="https://drive.google.com/drive/u/0/folders/18ZiGCi0RPgOYRYMKUqIzFYmieQHylIyH" target="_blank">優惠券雲端資料夾</a></small></span></label>
+  </div>
+
+  <!-- 行李清單 -->
+  <h2 class="section-h" id="pack">行李清單</h2>
+  <p class="section-sub">出門前最後再核對一次隨身區</p>
+
+  <div class="checkgroup">
+    <h4>出門前隨身確認</h4>
+    <label class="check"><input type="checkbox" data-key="go-earphone"><span class="txt">耳機</span></label>
+    <label class="check"><input type="checkbox" data-key="go-powerbank"><span class="txt">行動電源</span></label>
+    <label class="check"><input type="checkbox" data-key="go-phone"><span class="txt">手機</span></label>
+    <label class="check"><input type="checkbox" data-key="go-license"><span class="txt">駕照（＋日文譯本）</span></label>
+    <label class="check"><input type="checkbox" data-key="go-passport"><span class="txt">護照</span></label>
+    <label class="check"><input type="checkbox" data-key="go-jpy"><span class="txt">日幣</span></label>
+    <label class="check"><input type="checkbox" data-key="go-id"><span class="txt">身分證</span></label>
+    <label class="check"><input type="checkbox" data-key="go-ipad"><span class="txt">iPad</span></label>
+    <label class="check"><input type="checkbox" data-key="go-makeup"><span class="txt">化妝包</span></label>
+  </div>
+
+  <div class="checkgroup">
+    <h4>一、重要證件</h4>
+    <label class="check"><input type="checkbox" data-key="p-twd"><span class="txt">台幣</span></label>
+    <label class="check"><input type="checkbox" data-key="p-fx"><span class="txt">外幣</span></label>
+    <label class="check"><input type="checkbox" data-key="p-passport"><span class="txt">護照</span></label>
+    <label class="check"><input type="checkbox" data-key="p-card"><span class="txt">信用卡</span></label>
+    <label class="check"><input type="checkbox" data-key="p-entry"><span class="txt">入境申請（免稅辦理）</span></label>
+  </div>
+
+  <div class="checkgroup">
+    <h4>二、衣物類</h4>
+    <label class="check"><input type="checkbox" data-key="p-clothes"><span class="txt">白天要穿的衣服、褲子</span></label>
+    <label class="check"><input type="checkbox" data-key="p-pj"><span class="txt">睡衣</span></label>
+    <label class="check"><input type="checkbox" data-key="p-underwear"><span class="txt">內衣褲</span></label>
+    <label class="check"><input type="checkbox" data-key="p-socks"><span class="txt">襪子</span></label>
+  </div>
+
+  <div class="checkgroup">
+    <h4>三、3C 物品</h4>
+    <label class="check"><input type="checkbox" data-key="p-ipad"><span class="txt">iPad</span></label>
+    <label class="check"><input type="checkbox" data-key="p-powerbank"><span class="txt">行動電源<small>不可托運！記得放隨身包</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-earphone"><span class="txt">耳機</span></label>
+    <label class="check"><input type="checkbox" data-key="p-phone"><span class="txt">手機</span></label>
+    <label class="check"><input type="checkbox" data-key="p-charger"><span class="txt">充電插頭＋線</span></label>
+    <label class="check"><input type="checkbox" data-key="p-sim"><span class="txt">上網卡<small>確認 iPad 存圖</small></span></label>
+  </div>
+
+  <div class="checkgroup">
+    <h4>四、日常、盥洗用品</h4>
+    <label class="check"><input type="checkbox" data-key="p-contact"><span class="txt">隱形眼鏡</span></label>
+    <label class="check"><input type="checkbox" data-key="p-makeup"><span class="txt">化妝包</span></label>
+    <label class="check"><input type="checkbox" data-key="p-medicine"><span class="txt">隨身藥品<small>腸胃藥／過敏藥／止痛藥／感冒藥</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-glasses"><span class="txt">眼鏡</span></label>
+    <label class="check"><input type="checkbox" data-key="p-razor"><span class="txt">刮鬍刀</span></label>
+    <label class="check"><input type="checkbox" data-key="p-hairspray"><span class="txt">髮妝水</span></label>
+    <label class="check"><input type="checkbox" data-key="p-comb"><span class="txt">梳子</span></label>
+    <label class="check"><input type="checkbox" data-key="p-mask"><span class="txt">口罩</span></label>
+    <label class="check"><input type="checkbox" data-key="p-tissue"><span class="txt">個人衛生用品<small>衛生紙</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-facewash"><span class="txt">清潔用品<small>洗面乳</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-sunglasses"><span class="txt">太陽眼鏡</span></label>
+    <label class="check"><input type="checkbox" data-key="p-hat"><span class="txt">帽子</span></label>
+    <label class="check"><input type="checkbox" data-key="p-sunscreen"><span class="txt">防曬用品</span></label>
+  </div>
+
+  <div class="checkgroup">
+    <h4>五、其他物品</h4>
+    <label class="check"><input type="checkbox" data-key="p-wallet"><span class="txt">錢包</span></label>
+    <label class="check"><input type="checkbox" data-key="p-scale"><span class="txt">行李秤</span></label>
+    <label class="check"><input type="checkbox" data-key="p-pen"><span class="txt">筆<small>填寫入境卡要用到</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-bottle"><span class="txt">水瓶或保溫瓶</span></label>
+    <label class="check"><input type="checkbox" data-key="p-umbrella"><span class="txt">雨傘</span></label>
+    <label class="check"><input type="checkbox" data-key="p-bag"><span class="txt">塑膠袋<small>換下來的衣物分裝隔開</small></span></label>
+    <label class="check"><input type="checkbox" data-key="p-keys"><span class="txt">家裡鑰匙</span></label>
+    <label class="check"><input type="checkbox" data-key="p-alcohol"><span class="txt">酒精噴瓶</span></label>
+  </div>
+
+  <div class="footer">
+    <span class="sun">🌺</span>
+    OKINAWA 2026 · めんそーれ
+  </div>
+</div>
+
+<script>
+// 勾選進度：優先用 artifact 持久儲存，失敗則僅記在畫面上
+(async function(){
+  const boxes = document.querySelectorAll('input[data-key]');
+  const KEY = 'okinawa-202607-checks';
+  let saved = {};
+  const hasStorage = typeof window.storage !== 'undefined';
+  if (hasStorage) {
+    try {
+      const r = await window.storage.get(KEY);
+      if (r && r.value) saved = JSON.parse(r.value);
+    } catch(e){ /* 尚無紀錄 */ }
+  }
+  boxes.forEach(b=>{
+    const k = b.dataset.key;
+    if (k in saved) b.checked = saved[k];
+    b.addEventListener('change', async ()=>{
+      saved[k] = b.checked;
+      if (hasStorage) {
+        try { await window.storage.set(KEY, JSON.stringify(saved)); } catch(e){}
+      }
+    });
+  });
+})();
+// 日導覽目前位置高亮
+(function(){
+  const links = document.querySelectorAll('.daynav a');
+  const targets = [...links].map(a=>document.querySelector(a.getAttribute('href')));
+  function update(){
+    let idx = 0;
+    targets.forEach((t,i)=>{ if(t && t.getBoundingClientRect().top < 120) idx = i; });
+    links.forEach((a,i)=>a.classList.toggle('hot', i===idx));
+  }
+  update();
+  window.addEventListener('scroll', update, {passive:true});
+})();
+</script>
+</body>
+</html>
